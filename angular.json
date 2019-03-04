@@ -27,9 +27,16 @@
               "src/assets"
             ],
             "styles": [
+              "bower_components/bootstrap/dist/css/bootstrap.min.css",
+              "bower_components/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "bower_components/jquery/dist/jquery.min.js",
+              "src/assets/js/themes/popper.min.js",
+              "bower_components/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/notify.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

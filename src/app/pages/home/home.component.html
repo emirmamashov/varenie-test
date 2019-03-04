@@ -1,0 +1,51 @@
+<form class="form-inline my-2 my-lg-0">
+  <input #text class="form-control mr-sm-2" type="text" placeholder="Search">
+  <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="searchRepository(text.value);">Search</button>
+</form>
+
+<ng-container>
+  <h3>Репозитории</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Аватар</th>
+        <th scope="col">Проект</th>
+        <th scope="col">Рейтинг</th>
+        <th scope="col">Описание</th>
+        <th scope="col">Ссылка</th>
+        <th scope="col">
+          Язык
+          <select *ngIf="programmingLangs.length > 0"
+            #selectedLanguage
+            class="form-control" (change)="filterByLanguage(selectedLanguage.selectedOptions[0].value)">
+            <option>Выберите язык</option>
+            <option *ngFor="let language of programmingLangs" value="{{ language }}">
+              {{ language }}
+            </option>
+          </select>
+        </th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let repository of filteredRepositories">
+        <td>
+          <img width="50" src="{{ repository?.owner?.avatar_url }}" />
+        </td>
+        <td>{{ repository.name }}</td>
+        <td>{{ repository.score }}</td>
+        <td>{{ repository.description }}</td>
+        <td>
+          <a href="{{ repository.html_url }}" target="_blank">{{ repository.url }}</a>
+        </td>
+        <td>{{ repository.language }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="toFavorite(repository.id)">
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+</ng-container>

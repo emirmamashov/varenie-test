@@ -1,0 +1,26 @@
+{
+  "name": "varenia-test-app",
+  "description": "test",
+  "main": "",
+  "authors": [
+    "emir.mamashov <emir.mamashov@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "varenia",
+    "test"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.0",
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0"
+  }
+}
